@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Hotline</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="brand">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+            <h1 class="brand-name">Emergency <br> Service</h1>
+        </div>
+
+        <div class="stats">
+            <div class="stat" title="Favourites">
+                <span id="heartCount">0</span>
+                <img src="assets/heart.png" alt="Heart">
+            </div>
+            <div class="stat" title="Coins">
+                <span id="coinCount">100</span>
+                <img src="assets/coin.png" alt="Coin">
+            </div>
+            <div class="stat" id="copyStat" title="Copy Count">
+                <span id="copyCount">0</span>
+                <span class="copy-label">Copy</span>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- hero -->
+    <section class="hero">
+        <img class="hero-badge" src="assets/logo-dark.png" alt="">
+        <h1 class="color">Emergency Service Directory</h1>
+        <p class="color">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of
+            Bangladesh</p>
+    </section>
 </body>
+
 </html>
