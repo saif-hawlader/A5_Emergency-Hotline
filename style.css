@@ -104,3 +104,135 @@ body {
     margin-bottom: 15px;
 }
 
+/* Main Layout */
+.layout {
+    max-width: 1200px;
+    margin: -28px 60px 48px;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    gap: 20px; 
+}
+
+/* cards grid left  */
+.cards {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+
+/* Cards */
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-top {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.card-title-area {
+    flex: 1;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    margin: 2px 0 0;
+    color: #64748b;
+}
+
+.card-like {
+    margin-left: auto;
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    opacity: .8;
+}
+
+.card-like:active {
+    transform: scale(.95);
+}
+
+.card-number {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: .6px;
+    margin: 2px 0;
+}
+
+.badge {
+    width: max-content;
+    font-size: 12px;
+    color: gray;
+    background: rgba(242, 242, 242, 1);
+    padding: 4px 8px;
+    border-radius: 999px;
+} 
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;            
+}
+
+.action {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: gray;
+    cursor: pointer;
+    padding: 10px 12px;
+}
+
+.action svg {
+    width: 16px;
+    height: 16px;
+}
+
+.action:active {
+    transform: translateY(1px);
+}
+
+.action.copy {
+    background: #f8fafc;
+}
+
+.action.call {
+    background: #16a34a;
+    color: #fff;
+    border-color: transparent;
+}
+
+.action.call:hover {
+    background: #0f973d;
+}
