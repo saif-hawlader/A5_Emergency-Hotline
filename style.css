@@ -311,11 +311,17 @@ body {
     border-radius: 16px;
 }
 
+.history-first{
+    display: flex;
+    flex-direction: column;
+}
+
 .history-list .service {
     font-weight: 600;
 }
 
 .history-list .meta {
+    display: inline;
     color: black;
     font-size: 12px;
 }
@@ -323,4 +329,26 @@ body {
 .history-list .empty{
     text-align: center;
     font-style: italic;
+}
+
+
+/* Responsive */
+@media (max-width: 1024px){
+    .layout{
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cards{
+        order: 1;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px){
+    .hero{padding: 28px 16px 40px;}
+    .cards{
+        margin-top: auto;
+        grid-template-columns: 1fr;
+    }
 }

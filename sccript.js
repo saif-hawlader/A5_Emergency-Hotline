@@ -1,3 +1,19 @@
+// define
+let heartCount = 0;
+let coinCount = 100;
+let copyCount = 0;
+
+// DOM reference 
+const heartCountEl = document.getElementById("heartCount");
+const coinCountEl = document.getElementById("coinCount");
+const copyCountEl = document.getElementById("copyCount");
+const historyList = document.getElementById("historyList");
+const clearBtn = document.getElementById("callHistory");
+const cardsContainer = document.getElementById("cardsContainer");
+
+
+
+
 const hotlines = [
     {
         icon: "assets/emergency.png",
@@ -5,7 +21,7 @@ const hotlines = [
         subtitle: "National Emergancy",
         number: "999",
         category: "All",
-        
+
     },
 
     {
@@ -14,16 +30,16 @@ const hotlines = [
         subtitle: "Police",
         number: "999",
         category: "Police",
-        
+
     },
 
-        {
+    {
         icon: "assets/fire-service.png",
         title: "Fire Service Number",
         subtitle: "Fire Service",
         number: "999",
         category: "Fire",
-        
+
     },
 
     {
@@ -32,7 +48,7 @@ const hotlines = [
         subtitle: "Ambulance",
         number: "1994-999999",
         category: "Health",
-        
+
     },
 
     {
@@ -41,7 +57,7 @@ const hotlines = [
         subtitle: "Women & Child Helpline",
         number: "109",
         category: "Help",
-        
+
     },
 
     {
@@ -50,7 +66,7 @@ const hotlines = [
         subtitle: "Anti-Corruption",
         number: "106",
         category: "Govt.",
-        
+
     },
 
     {
@@ -59,7 +75,7 @@ const hotlines = [
         subtitle: "Electricity Outage",
         number: "16216",
         category: "Electricity",
-       
+
     },
 
     {
@@ -68,7 +84,7 @@ const hotlines = [
         subtitle: "NGO",
         number: "16465",
         category: "NGO",
-        
+
     },
 
     {
@@ -77,7 +93,7 @@ const hotlines = [
         subtitle: "Bangladesh Railway",
         number: "163",
         category: "Travel",
-        
+
     }
 
 ];
@@ -85,14 +101,14 @@ const hotlines = [
 
 
 // Render cards dynamically
-function renderCards(){
+function renderCards() {
     cardsContainer.innerHTML = "";
     hotlines.forEach((item) => {
         const card = document.createElement("div");
         card.classList.add("card");
-  
 
-card.innerHTML = `
+
+        card.innerHTML = `
       <div class="card-top">
         <img src="${item.icon}" alt="${item.title}" class="card-icon">
         <button class="card-like"><i class="fa-regular fa-heart"></i></button>
@@ -111,41 +127,60 @@ card.innerHTML = `
       </div>
     `;
 
-//Like button
-card.querySelector(".card-like").addEventListener("click",() => {
-    heartCount++;
-    heartCountEl.textContent = heartCount;
-});
+        //Like button
+        card.querySelector(".card-like").addEventListener("click", () => {
+            heartCount++;
+            heartCountEl.textContent = heartCount;
+        });
 
-// Copy Button 
-card.querySelector(".copy").addEventListener("click",() => {
-    navigator.clipboard.writeText(item.number).then(() => {
-        alert(`Copied: ${item.number}`);
-        copyCount++;
-        copyCountEl.textContent = copyCount;
+        // Copy Button 
+        card.querySelector(".copy").addEventListener("click", () => {
+            navigator.clipboard.writeText(item.number).then(() => {
+                alert(`Copied: ${item.number}`);
+                copyCount++;
+                copyCountEl.textContent = copyCount;
+            });
+        });
+
+        // Call Button 
+
+        card.querySelector(".call").addEventListener("click", () => {
+            if (coinCount < 20) {
+                alert("Not enough coin to make a call");
+                return;
+            }
+
+            alert(`Calling ${item.title} at ${item.number}...`
+            );
+            coinCount -= 20;
+            coinCountEl.textContent = coinCount;
+
+            addToHistory(item.title, item.number);
+        });
+
+
+        cardsContainer.appendChild(card);
+
     });
-});
 
-// Call Button 
+}
 
-card.querySelector(".call").addEventListener("click",() => {
-    if(coinCount < 20) {
-        alert("Not enough coin to make a call");
-        return;
+// Add call to history
+function addToHistory(serviceName, number) {
+    const time = new Date().toLocaleTimeString();
+    if (historyList.querySelector(".empty")) {
+        historyList.innerHTML = "";
     }
+    const li = document.createElement("li");
+    li.innerHTML = `
+    <span class="history-first">
+    <span class="service">${serviceName}</span>
+    <span class="meta">${number}</span>
+    </span>
+    <span class="time">${time}</span>`;
+    historyList.prepend(li);
 
-    alert(`Calling ${item.title} at ${item.number}...`
-    );
-    coinCount -= 20;
-    coinCountEl.textContent = coinCount;
 
-    addToHistory(item.title,item.number);
-});
-
-
-cardsContainer.appendChild(card);
-
-});
 
 }
 
