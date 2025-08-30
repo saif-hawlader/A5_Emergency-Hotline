@@ -181,8 +181,12 @@ function addToHistory(serviceName, number) {
     historyList.prepend(li);
 
 
-
 }
+
+// clear call history
+clearBtn.addEventListener("click", () => {
+    historyList.innerHTML = `<li class="empty">No calls yet. </li>`;
+});
 
 // Init
 renderCards();

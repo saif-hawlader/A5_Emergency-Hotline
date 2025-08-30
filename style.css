@@ -82,7 +82,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 103, 71, 1);
+    background: linear-gradient(to right, #1a3c2b, #2e7d32, #1a3c2b);
+    /* background-color: rgba(0, 103, 71, 1); */
 }
 .hero-badge {
     width: 80px;
@@ -287,6 +288,7 @@ body {
 }
 
 .btn-clear {
+    padding: 8px 16px;
     background: #00A63E;
     color: #ffffff;
 }
