@@ -106,11 +106,11 @@ body {
 
 /* Main Layout */
 .layout {
-    max-width: 1200px;
-    margin: -28px 60px 48px;
+    max-width: 1460px;
+    margin: -28px 20px 48px;
     padding: 0 16px;
     display: grid;
-    grid-template-columns: 7fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 20px; 
 }
 
@@ -235,4 +235,92 @@ body {
 
 .action.call:hover {
     background: #0f973d;
+}
+
+/* history section */
+/* history right  */
+.history {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    padding: 12px 12px 6px;
+    margin-top: 60px;
+    min-width: none;
+}
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 6px 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.history-header .title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.history-emoji {
+    font-size: 20px;
+}
+
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 12px;
+    background: #00A63E;
+    color: white;
+    font-weight: 600;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-clear {
+    background: #00A63E;
+    color: #ffffff;
+}
+
+/* History-list  */
+.history-list {
+        list-style: none;
+        margin: 10px 0 0;
+        padding: 0;
+        max-height: 540px;
+        overflow: auto;
+    }
+
+
+.history-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 16px;
+}
+
+.history-list .service {
+    font-weight: 600;
+}
+
+.history-list .meta {
+    color: black;
+    font-size: 12px;
+}
+
+.history-list .empty{
+    text-align: center;
+    font-style: italic;
 }
