@@ -103,6 +103,7 @@ body {
 .hero p {
     opacity: .95;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 /* Main Layout */
@@ -352,5 +353,26 @@ body {
     .cards{
         margin-top: auto;
         grid-template-columns: 1fr;
+    }
+
+
+ .navbar {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .brand-name {
+        font-size: 16px;
+        text-align: center;
+    }
+    .stats {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .layout {
+        max-width: 100%;
+        margin: 0 10px 40px;
+        padding: 0;
     }
 }
